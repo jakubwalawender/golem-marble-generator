@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/golem-marble-generator/static/css/main.affb8c1d.css",
+    "main.js": "/golem-marble-generator/static/js/main.5b330426.js",
+    "static/js/787.195496d1.chunk.js": "/golem-marble-generator/static/js/787.195496d1.chunk.js",
+    "static/media/AncientModernTales-a7Po.ttf": "/golem-marble-generator/static/media/AncientModernTales-a7Po.4b8003f082e32ed5b07d.ttf",
+    "index.html": "/golem-marble-generator/index.html",
+    "main.affb8c1d.css.map": "/golem-marble-generator/static/css/main.affb8c1d.css.map",
+    "main.5b330426.js.map": "/golem-marble-generator/static/js/main.5b330426.js.map",
+    "787.195496d1.chunk.js.map": "/golem-marble-generator/static/js/787.195496d1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.affb8c1d.css",
+    "static/js/main.5b330426.js"
+  ]
+}
