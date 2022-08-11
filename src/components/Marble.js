@@ -7,6 +7,6 @@ export default class Marble extends Component {
     this.state = {color: props.color}
   }
   render() {
-    return <img src={colorMapping[this.state.color]} alt='marble' class="marble"/>;
+    return <img src={colorMapping[this.state.color]} alt='marble' className="marble"/>;
   }
 }
