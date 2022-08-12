@@ -1,26 +1,29 @@
-@import 'bootstrap/dist/css/bootstrap.min.css';
 @font-face {
   font-family: "AncientModernTales";
   src: local("AncientModernTales"),
-   url("./fonts/AncientModernTales/AncientModernTales-a7Po.ttf") format("truetype");
-  }
+    url("./fonts/AncientModernTales/AncientModernTales-a7Po.ttf")
+      format("truetype");
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "AncientModernTales", "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "AncientModernTales", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(60, 60, 60);
   color: rgb(245, 245, 245);
 }
 
+select,
+button {
+  font-family: inherit;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-
 
 a {
   color: white;

@@ -29,29 +29,26 @@ const onePlayerMarbles = [].concat(
   Array(3).fill("white"),
   Array(1).fill("black")
 );
-export const playerCounts = [
-  {
+
+export const playerCounts = {
+  4: {
     colorConfig: fourPlayerMarbles.map((color, id) => ({ color, id })),
     pathsCount: 5,
     display: "Four players",
-    count: 4,
   },
-  {
+  3: {
     colorConfig: threePlayerMarbles.map((color, id) => ({ color, id })),
     pathsCount: 5,
     display: "Three players",
-    count: 3,
   },
-  {
+  2: {
     colorConfig: twoPlayerMarbles.map((color, id) => ({ color, id })),
     pathsCount: 5,
     display: "Two players",
-    count: 2,
   },
-  {
+  1: {
     colorConfig: onePlayerMarbles.map((color, id) => ({ color, id })),
     pathsCount: 5,
     display: "One player",
-    count: 1,
   },
-];
+};

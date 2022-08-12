@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Marble } from "./Marble";
 import { playerCounts } from "../playerCountOptions";
@@ -8,16 +8,9 @@ export const Synagogue = () => {
   const [synagogue, setSynagogue] = useState([]);
   const [currentValue, setCurrentValue] = useState("4");
 
-  const handleRoll = useCallback(() => {
-    let options = playerCounts.filter(function (x) {
-      return x.count === Number(currentValue);
-    })[0];
-    setSynagogue(roll(options));
-  }, [currentValue]);
-
   useEffect(() => {
-    handleRoll();
-  }, [handleRoll, currentValue]);
+    setSynagogue(roll(currentValue));
+  }, [currentValue]);
 
   return (
     <div>
@@ -32,15 +25,13 @@ export const Synagogue = () => {
           );
         })}
       </div>
-      <button onClick={handleRoll}>
-        Roll
-      </button>
+      <button onClick={() => setSynagogue(roll(currentValue))}>Roll</button>
       <select
         value={currentValue}
         onChange={(e) => setCurrentValue(e.target.value)}
       >
-        {playerCounts.map((config) => {
-          return <option players={config.count}>{config.count}</option>;
+        {Object.entries(playerCounts).map(([playersCount, { display }]) => {
+          return <option value={playersCount}>{display}</option>;
         })}
       </select>
     </div>
