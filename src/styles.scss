@@ -58,7 +58,7 @@ $marble_width: $track_width;
 }
 
 .holder {
-  width: 95vw;
+  width: 100vw;
   height: 95vh;
 }
 .roll-button {
@@ -88,4 +88,13 @@ $marble_width: $track_width;
   color: #ffffff;
   border: none;
   cursor: pointer;
+}
+select option:checked:after {
+  content: attr(title);
+  background: #666;
+  color: #fff;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  border: none;
 }
