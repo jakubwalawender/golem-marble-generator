@@ -17,3 +17,8 @@ export const roll = (playersCount) => {
 
   return synagogue;
 };
+
+export const clear = (playersCount) => {
+  const options = playerCounts[playersCount];
+  return Array.from(new Array(Number(options.pathsCount)).fill().map(() => []));
+};

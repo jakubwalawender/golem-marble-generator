@@ -17,6 +17,7 @@ $marble_width: $track_width;
   );
   width: $track_width;
   height: $track_height;
+  position: relative;
 }
 
 .synagogue {
@@ -30,13 +31,13 @@ $marble_width: $track_width;
 }
 
 .marble {
-  margin-top: -30%;
+  position: absolute;
   width: $marble_width;
   height: $marble_width;
+  transition: top 300ms ease-out;
 }
 
 .track > .marble ~ .marble {
-  margin-top: -30%;
   width: $marble_width;
 }
 
