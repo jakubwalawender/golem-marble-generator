@@ -25,15 +25,23 @@ export const Synagogue = () => {
           );
         })}
       </div>
-      <button onClick={() => setSynagogue(roll(currentValue))}>Roll</button>
-      <select
-        value={currentValue}
-        onChange={(e) => setCurrentValue(e.target.value)}
-      >
-        {Object.entries(playerCounts).map(([playersCount, { display }]) => {
-          return <option value={playersCount}>{display}</option>;
-        })}
-      </select>
+      <div className="menu">
+        <button
+          onClick={() => setSynagogue(roll(currentValue))}
+          className="roll-button"
+        >
+          Roll
+        </button>
+        <select
+          className="players-select"
+          value={currentValue}
+          onChange={(e) => setCurrentValue(e.target.value)}
+        >
+          {Object.entries(playerCounts).map(([playersCount, { display }]) => {
+            return <option value={playersCount}>{display}</option>;
+          })}
+        </select>
+      </div>
     </div>
   );
 };
