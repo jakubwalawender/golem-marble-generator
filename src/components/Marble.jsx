@@ -6,8 +6,8 @@ export const Marble = ({ color, position }) => {
 
   useEffect(() => {
     setTimeout(() => {
-      setTop(`${80 - 10 * position}%`);
-    }, position);
+      setTop(`${82 - 14 * position}%`);
+    }, 10);
   }, [position]);
 
   return (

@@ -22,7 +22,6 @@ $marble_width: $track_width;
 
 .synagogue {
   margin: auto;
-  margin-bottom: 0.5vmin;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -34,7 +33,7 @@ $marble_width: $track_width;
   position: absolute;
   width: $marble_width;
   height: $marble_width;
-  transition: top 300ms ease-out;
+  transition: top 400ms ease-out;
 }
 
 .track > .marble ~ .marble {
@@ -52,6 +51,7 @@ $marble_width: $track_width;
 
 .menu {
   margin: auto;
+  margin-bottom: 0.5vmin;
   width: $synagogue-width;
   height: 8vmin;
   display: flex;

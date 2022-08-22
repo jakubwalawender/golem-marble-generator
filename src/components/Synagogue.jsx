@@ -16,24 +16,11 @@ export const Synagogue = () => {
   };
 
   useEffect(() => {
-    setSynagogue(roll(currentValue));
+    handleRoll();
   }, [currentValue]);
 
   return (
     <div>
-      <div className="synagogue">
-        {synagogue.map((column, id) => {
-          return (
-            <div key={id} className="track">
-              {column.map(({ color, id }, position) => {
-                return (
-                  <Marble key={id} color={color} position={position}></Marble>
-                );
-              })}
-            </div>
-          );
-        })}
-      </div>
       <div className="menu">
         <button onClick={handleRoll} className="roll-button">
           Roll
@@ -47,6 +34,20 @@ export const Synagogue = () => {
             return <option value={playersCount}>{display}</option>;
           })}
         </select>
+      </div>
+
+      <div className="synagogue">
+        {synagogue.map((column, id) => {
+          return (
+            <div key={id} className="track">
+              {column.map(({ color, id }, position) => {
+                return (
+                  <Marble key={id} color={color} position={position}></Marble>
+                );
+              })}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
