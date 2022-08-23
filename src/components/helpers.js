@@ -1,5 +1,10 @@
 import { playerCounts } from "../playerCountOptions";
 
+export const ACTION = {
+  CHANGE_PLAYERS: "changePlayers",
+  ROLL: "roll",
+};
+
 export const roll = (playersCount) => {
   const options = playerCounts[playersCount];
   const synagogue = Array.from(
@@ -18,7 +23,20 @@ export const roll = (playersCount) => {
   return synagogue;
 };
 
-export const clear = (playersCount) => {
-  const options = playerCounts[playersCount];
-  return Array.from(new Array(Number(options.pathsCount)).fill().map(() => []));
+export const rollReducer = (current, { action, playersCount }) => {
+  switch (action) {
+    case ACTION.ROLL:
+      return {
+        ...current,
+        key: current.key + 1,
+        tracks: roll(current.playersCount),
+      };
+    case ACTION.CHANGE_PLAYERS:
+      return {
+        key: current.key + 1,
+        playersCount,
+        tracks: roll(playersCount),
+      };
+    default:
+  }
 };

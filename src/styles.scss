@@ -18,6 +18,7 @@ $marble_width: $track_width;
   width: $track_width;
   height: $track_height;
   position: relative;
+  border-radius: 0% 0% 9999px 9999px;
 }
 
 .synagogue {
@@ -60,7 +61,10 @@ $marble_width: $track_width;
 
 .holder {
   width: 100vw;
-  height: 95vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .roll-button {
   background-color: #0f0f0f;

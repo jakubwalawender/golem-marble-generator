@@ -1,45 +1,45 @@
-import React, { useState, useEffect } from "react";
+import React, { useReducer } from "react";
 
 import { Marble } from "./Marble";
 import { playerCounts } from "../playerCountOptions";
-import { clear, roll } from "./helpers";
+import { ACTION, roll, rollReducer } from "./helpers";
 
 export const Synagogue = () => {
-  const [synagogue, setSynagogue] = useState([]);
-  const [currentValue, setCurrentValue] = useState("4");
-
-  const handleRoll = () => {
-    setSynagogue(clear(currentValue));
-    setTimeout(() => {
-      setSynagogue(roll(currentValue));
-    }, 50);
-  };
-
-  useEffect(() => {
-    handleRoll();
-  }, [currentValue]);
+  const [{ tracks, key, playersCount }, dispach] = useReducer(rollReducer, {
+    tracks: roll(4),
+    key: 0,
+    playersCount: 4,
+  });
 
   return (
     <div>
       <div className="menu">
-        <button onClick={handleRoll} className="roll-button">
+        <button
+          onClick={() => dispach({ action: ACTION.ROLL })}
+          className="roll-button"
+        >
           Roll
         </button>
         <select
           className="players-select"
-          value={currentValue}
-          onChange={(e) => setCurrentValue(e.target.value)}
+          value={playersCount}
+          onChange={(e) => {
+            const newValue = e.target.value;
+            dispach({
+              action: ACTION.CHANGE_PLAYERS,
+              playersCount: newValue,
+            });
+          }}
         >
           {Object.entries(playerCounts).map(([playersCount, { display }]) => {
             return <option value={playersCount}>{display}</option>;
           })}
         </select>
       </div>
-
       <div className="synagogue">
-        {synagogue.map((column, id) => {
+        {tracks.map((column, id) => {
           return (
-            <div key={id} className="track">
+            <div key={`${id}-${key}`} className="track">
               {column.map(({ color, id }, position) => {
                 return (
                   <Marble key={id} color={color} position={position}></Marble>
